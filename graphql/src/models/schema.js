@@ -4,7 +4,7 @@ import { userResolver } from './user/user-resolver'
 
 const rootTypeDefs = gql`
     type Query {
-        _empty: String
+        _empty: Boolean
     }
 `
 
