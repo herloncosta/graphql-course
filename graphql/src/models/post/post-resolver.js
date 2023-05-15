@@ -13,15 +13,16 @@ const postsApi = [
 	}
 ]
 
+const post = () => {
+	return {
+		id: '13242e4',
+		title: 'Primeiros Passos com GraphQL e Apollo Server'
+	}
+}
+
 export const postResolver = {
 	Query: {
-		post: () => {
-			const post = {
-				id: '13242e4',
-				title: 'Primeiros Passos com GraphQL e Apollo Server'
-			}
-			return post
-		},
+		post,
 		posts: () => postsApi
 	}
 }
