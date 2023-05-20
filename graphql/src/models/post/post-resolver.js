@@ -1,4 +1,4 @@
-const postsApi = [
+const posts = () => [
 	{
 		id: '13242e4',
 		title: 'Primeiros Passos com GraphQL e Apollo Server'
@@ -13,16 +13,14 @@ const postsApi = [
 	}
 ]
 
-const post = () => {
-	return {
-		id: '13242e4',
-		title: 'Primeiros Passos com GraphQL e Apollo Server'
-	}
-}
+const post = () => ({
+	id: '13242e4',
+	title: 'Primeiros Passos com GraphQL e Apollo Server'
+})
 
 export const postResolver = {
 	Query: {
 		post,
-		posts: () => postsApi
+		posts
 	}
 }
