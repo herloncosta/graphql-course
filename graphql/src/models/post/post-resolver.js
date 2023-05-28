@@ -1,26 +1,18 @@
-const posts = () => [
-	{
-		id: '13242e4',
-		title: 'Primeiros Passos com GraphQL e Apollo Server'
-	},
-	{
-		id: '13242e5',
-		title: 'Primeiros Passos com GraphQL e Apollo Server'
-	},
-	{
-		id: '13242e6',
-		title: 'Primeiros Passos com GraphQL e Apollo Server'
-	}
-]
+const post = async (_, args, context) => {
+	const response = await context.getPost(args.id)
+	const post = await response.data
+	return post
+}
 
-const post = () => ({
-	id: '13242e4',
-	title: 'Primeiros Passos com GraphQL e Apollo Server'
-})
+const posts = async (_, args, context) => {
+	const response = await context.getPosts()
+	const posts = await response.data
+	return posts
+}
 
 export const postResolver = {
 	Query: {
 		post,
-		posts
-	}
+		posts,
+	},
 }

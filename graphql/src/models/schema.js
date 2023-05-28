@@ -5,16 +5,16 @@ import { postTypeDefs } from './post/post-type'
 import { postResolver } from './post/post-resolver'
 
 const rootTypeDefs = gql`
-    type Query {
-        _empty: Boolean
-    }
+	type Query {
+		_empty: Boolean
+	}
 `
 
 const rootResolvers = {
 	Query: {
-		_empty: () => true
-	}
+		_empty: () => true,
+	},
 }
 
-export const typeDefs = [ rootTypeDefs, userTypeDef, postTypeDefs ]
-export const resolvers = [ rootResolvers, userResolver, postResolver ]
+export const typeDefs = [rootTypeDefs, userTypeDef, postTypeDefs]
+export const resolvers = [rootResolvers, userResolver, postResolver]
